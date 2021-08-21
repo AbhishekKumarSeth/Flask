@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask-migrate = "*"
+coverage = "*"
+flask-bcrypt = "*"
+flask-cors = "*"
+flask-cli = "*"
+pyjwt = "*"
+azure-storage = "*"
+azure-storage-blob = "*"
+marshmallow-sqlalchemy = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"

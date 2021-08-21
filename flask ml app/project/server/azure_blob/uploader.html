@@ -1,0 +1,36 @@
+<html>
+   <body>
+      <form>
+         <input type = "file" id="formFile" name = "file" />
+         <button type="button" id="upload" name="Upload">Upload</button>
+      </form> 
+
+
+      <script type='text/javascript' src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+
+      <script>
+            var token = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mjg3OTI0ODMsImlhdCI6MTYyODc5MTk4Mywic3ViIjoxfQ.qBUyDappcy3hm_oZ8s3d2iw4im167pzZ8dj4K6RY_kw'
+
+          $('#upload').click(function(e){
+            var formData = new FormData();
+            formData.append('file', $('#formFile')[0].files[0]);
+            doc_category = "Sales Agreement"
+            var xhr = new XMLHttpRequest();
+
+            xhr.open("POST", "http://localhost:5000/uploader/" + doc_category, true);
+            xhr.setRequestHeader("Authorization", token)
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    alert("File successfully uploaded")
+                } 
+                else {
+                    alert("File upload failed!");
+                }
+            };
+
+            xhr.send(formData);
+          });
+      </script>
+   </body>
+</html>
+
