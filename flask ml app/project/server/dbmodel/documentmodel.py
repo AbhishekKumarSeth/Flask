@@ -9,6 +9,8 @@ class Category(db.Model):
     description= db.Column(db.Text, unique=False, nullable=True)
 
 
+
+
 class Dcoument(db.Model):
     """ Document Model for storing document related details """
     __tablename__ = "Dcoument"

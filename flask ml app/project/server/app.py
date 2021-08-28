@@ -31,7 +31,9 @@ migrate.init_app(app, db)
 from project.server.auth.views import auth_blueprint
 from project.server.student.views import stu_blueprint
 from project.server.azure_blob.upload import azure_blueprint
+from project.server.category.views import category_blueprint
 
 app.register_blueprint(auth_blueprint)
 app.register_blueprint(stu_blueprint)
 app.register_blueprint(azure_blueprint)
+app.register_blueprint(category_blueprint)
